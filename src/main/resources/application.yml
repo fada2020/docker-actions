@@ -33,3 +33,7 @@ spring:
 file:
   dir: '/storage/'
   separator: '/'
+logging:
+  level:
+    root: info
+    com.example.demo: debug
