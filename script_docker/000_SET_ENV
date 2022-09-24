@@ -1,5 +1,5 @@
 # 어플리케이션 이름
-export APP=demo
+export APP=hyeogju
 
 # 스프링부트에서 사용하는 포트
 # .yml 의 server.port 정보와 동일

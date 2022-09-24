@@ -1,0 +1,4 @@
+spring:
+  datasource:
+    url: jdbc:mysql://hyeogju_db/hyeogju_schema
+
