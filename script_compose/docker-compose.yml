@@ -2,13 +2,13 @@ version: '3.4'
 
 services:
   web:
-    image: j211_web_image
+    image: hyeogju_web_image
     networks:
-      - j211_net
+      - hyeogju_net
     ports:
       - "80:80"
     links:
-      - was:j211
+      - was:hyeogju
     entrypoint:
       - "nginx"
       - "-g"
@@ -16,13 +16,13 @@ services:
     depends_on:
       - was
   was:
-    image: j211_app_image
+    image: hyeogju_app_image
     networks:
-      - j211_net
+      - hyeogju_net
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     links:
-      - db:j211_db
+      - db:hyeogju_db
     entrypoint:
       - "java"
       - "-jar"
@@ -31,21 +31,21 @@ services:
     depends_on:
       - db
   db:
-    image: mysql
+    image: mariadb
     networks:
-      - j211_net
+      - hyeogju_net
     environment:
-      - MYSQL_DATABASE=j211_schema
-      - MYSQL_USER=user01
-      - MYSQL_PASSWORD=user01
-      - MYSQL_ROOT_PASSWORD=password
+      - MARIADB_DATABASE=hyeogju_schema
+      - MARIADB_USER=fada2020
+      - MARIADB_PASSWORD=guswn0731
+      - MARIADB_ROOT_PASSWORD=guswn0731
     volumes:
-      - /build/DB/mysql:/var/lib/mysql
+      - /build/DB/mariadb:/var/lib/mariadb
     ports:
       - "3306:3306"
 
 networks:
-  j211_net:
+  hyeogju_net:
 
   
 
