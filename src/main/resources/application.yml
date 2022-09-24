@@ -1,0 +1,35 @@
+spring:
+  #  servlet:
+  #    multipart:
+  #      enabled: false
+  servlet:
+    multipart:
+      max-file-size: 2GB
+      max-request-size: 2GB
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    password: guswn0731
+    url: jdbc:mariadb://localhost:3306/db_private?serverTimezone=Asia/Seoul&useSSL=false&characterEncoding=utf8
+    username: fada2020
+
+  jpa:
+    generate-ddl: true
+    database: MYSQL
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        ddl-auto: create
+        show_sql: true
+        format_sql: true
+  profiles:
+    include: oauth
+  messages:
+    encoding: UTF-8
+    basename: i18n/messages,i18n/errors
+
+file:
+  dir: '/storage/'
+  separator: '/'
