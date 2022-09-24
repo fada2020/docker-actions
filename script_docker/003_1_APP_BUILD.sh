@@ -1,3 +1,3 @@
 . ./000_SET_ENV
 cd ..
-gradle build --exclude-task test
+./gradlew build --exclude-task test
