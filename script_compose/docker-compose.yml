@@ -35,7 +35,7 @@ services:
     networks:
       - hyeogju_net
     environment:
-      - MARIADB_DATABASE=hyeogju_schema
+      - MARIADB_DATABASE=hyeogju_db
       - MARIADB_USER=fada2020
       - MARIADB_PASSWORD=guswn0731
       - MARIADB_ROOT_PASSWORD=guswn0731
@@ -47,5 +47,8 @@ services:
 networks:
   hyeogju_net:
 
+
+## docker network create mynet
+## docker run --name mariadb -d -p 3306:3306 --restart=always -e MYSQL_ROOT_PASSWORD=guswn0731  -e MARIADB_DATABASE=hyeogju_db  -e MARIADB_USER=fada2020  -e MARIADB_PASSWORD=guswn0731 --network mynet mariadb:tag --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
   
 
