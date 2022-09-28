@@ -38,7 +38,7 @@ services:
       - hyeogju_net
     restart: always
     environment:
-      - MARIADB_DATABASE=hyeogju_db
+      - MARIADB_DATABASE=hyeogju_schema
       - MARIADB_USER=fada2020
       - MARIADB_PASSWORD=guswn0731
       - MARIADB_ROOT_PASSWORD=guswn0731
