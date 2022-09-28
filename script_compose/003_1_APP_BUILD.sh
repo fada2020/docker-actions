@@ -1,3 +1,3 @@
 . ./000_SET_ENV
 cd ..
-./gradlew build
+./gradlew build -x
