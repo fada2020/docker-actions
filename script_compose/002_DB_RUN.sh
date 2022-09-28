@@ -13,5 +13,7 @@ echo "===================="
 echo "db schema script"
 echo "docker exec -it " ${DOCKER_DB} " bash"
 echo "grant all privileges on "${MARIADB_DATABASE}.* to" 'fada2020'@'%';"
+echo "grant all privileges on "${MARIADB_DATABASE}.* to" 'fada2020'@'localhost';"
+echo "flush privileges;"
 echo "===================="
 
