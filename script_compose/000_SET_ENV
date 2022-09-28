@@ -7,11 +7,11 @@ export SPRINGBOOT_PORT=8080
 
 # DB_RUN.sh 에서 사용 되는 DB 기본 정보
 # .yml 의 spring.database 정보와 동일
-export MARIADB_DATABASE=${APP}_schema
+export MARIADB_DATABASE=${APP}_db
 export MARIADB_USER=fada2020
 export MARIADB_PASSWORD=guswn0731
 export DOCKER_DB_PORT=3306
-export MARIADB_ROOT_PASSWORD=password
+export MARIADB_ROOT_PASSWORD=guswn0731
 
 # DB_RUN.sh 에서 DB schema 정보 저장 위치
 # 컨테이너가 삭제되더라도 데이터를 유지할 수 있는 효과
