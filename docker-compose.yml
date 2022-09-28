@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.7'
 
 services:
   web:
@@ -9,6 +9,7 @@ services:
       - "80:80"
     links:
       - was:hyeogju
+    restart: always
     entrypoint:
       - "nginx"
       - "-g"
@@ -28,12 +29,14 @@ services:
       - "-jar"
       - "-Duser.timezone=Asia/Seoul"
       - "/app.jar"
+    restart: always
     depends_on:
       - db
   db:
-    image: mariadb
+    image: mariadb:latest
     networks:
       - hyeogju_net
+    restart: always
     environment:
       - MARIADB_DATABASE=hyeogju_db
       - MARIADB_USER=fada2020

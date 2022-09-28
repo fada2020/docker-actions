@@ -7,7 +7,7 @@ export SPRINGBOOT_PORT=8080
 
 # DB_RUN.sh 에서 사용 되는 DB 기본 정보
 # .yml 의 spring.database 정보와 동일
-export MARIADB_DATABASE=${APP}_db
+export MARIADB_DATABASE=${APP}_schema
 export MARIADB_USER=fada2020
 export MARIADB_PASSWORD=guswn0731
 export DOCKER_DB_PORT=3306
