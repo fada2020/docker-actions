@@ -1,4 +1,4 @@
 spring:
   datasource:
-    url: jdbc:mariadb://hyeogju/hyeogju_db?serverTimezone=Asia/Seoul&useSSL=false&characterEncoding=utf8
+    url: jdbc:mariadb://hyeogju_net/hyeogju_db?serverTimezone=Asia/Seoul&useSSL=false&characterEncoding=utf8
 
