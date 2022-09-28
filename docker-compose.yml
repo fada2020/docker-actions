@@ -1,14 +1,49 @@
-version: "3"
+version: '3.4'
+
 services:
   web:
-    image: nginx
+    image: hyeogju_web_image
+    networks:
+      - hyeogju_net
     ports:
-      - 80:80
-    volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
+      - "80:80"
+    links:
+      - was:hyeogju
+    entrypoint:
+      - "nginx"
+      - "-g"
+      - "daemon off;"
     depends_on:
-      - spring
-  spring:
-    build: .
+      - was
+  was:
+    image: hyeogju_app_image
+    networks:
+      - hyeogju_net
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    links:
+      - db:hyeogju_db
+    entrypoint:
+      - "java"
+      - "-jar"
+      - "-Duser.timezone=Asia/Seoul"
+      - "/app.jar"
+    depends_on:
+      - db
+  db:
+    image: mariadb
+    networks:
+      - hyeogju_net
+    environment:
+      - MARIADB_DATABASE=hyeogju_db
+      - MARIADB_USER=fada2020
+      - MARIADB_PASSWORD=guswn0731
+      - MARIADB_ROOT_PASSWORD=guswn0731
+    volumes:
+      - /build/DB/mariadb:/var/lib/mariadb
     ports:
-      - 8080:8080
+      - "3306:3306"
+
+networks:
+  hyeogju_net:
+
