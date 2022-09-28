@@ -1,4 +1,4 @@
 spring:
   datasource:
-    url: jdbc:mariadb://mariadb/hyeogju_db
+    url: jdbc:mariadb://hyeogju_net/hyeogju_db
 
